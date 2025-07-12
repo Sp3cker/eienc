@@ -1,0 +1,57 @@
+---
+import mapLocations from "../utils/generateMapLocations";
+import { processEncounters } from "../utils/encounterUtils/encounterProcessor";
+import { getSpeciesIdFromLabel } from "../utils/encounterUtils/pokemonEncounterProcessor";
+import { getSpeciesName } from "../utils/speciesData";
+import PokemonSprite from "./PokemonSprite.astro";
+
+const encounters = processEncounters("MAP_ROUTE104").encounters;
+---
+
+<div id="container">
+  <main>
+    <div class="flex justify-center">
+      <table
+        class="table-auto border-collapse rounded-lg shadow-md overflow-hidden mt-4"
+      >
+        <thead>
+          <tr class="bg-amber-800 text-white">
+            <th class="px-4 py-2 text-left">Land Encounters</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            encounters
+              .filter((encounter) => encounter.method === "land_mons")
+              .map((encounter) => {
+                const speciesName = getSpeciesName(
+                  getSpeciesIdFromLabel(encounter.species)
+                );
+                const levelRange = `Lv. ${encounter.min_level} – ${encounter.max_level}`;
+                return (
+                  <tr class="flex-1 even:bg-gray-200 border-b bg-white last:border-0 flex flex-col">
+                    <td class="pl-1 flex gap-2 items-center">
+                      <PokemonSprite
+                        speciesId={getSpeciesIdFromLabel(encounter.species)}
+                      />
+                      <span class="text-sm font-medium">{speciesName}</span>
+                    </td>
+                    <td class="px-2 pb-2 flex italic">
+                      <span class="rounded-full text-xs w-12 flex items-center justify-center text-neutral-900">
+                        {levelRange}
+                      </span>
+                      <span class="rounded-full text-xs  w-12 flex items-center justify-center text-green-600">
+                        {encounter.encounterRate
+                          ? `${encounter.encounterRate}%`
+                          : "—"}
+                      </span>
+                    </td>
+                  </tr>
+                );
+              })
+          }
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
