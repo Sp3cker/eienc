@@ -1,57 +1,53 @@
 ---
-import mapLocations from "../utils/generateMapLocations";
-import { processEncounters } from "../utils/encounterUtils/encounterProcessor";
-import { getSpeciesIdFromLabel } from "../utils/encounterUtils/pokemonEncounterProcessor";
-import { getSpeciesName } from "../utils/speciesData";
-import PokemonSprite from "./PokemonSprite.astro";
+import mapLocations from '../utils/generateMapLocations'
+import { processEncounters } from '../utils/encounterUtils/encounterProcessor'
 
-const encounters = processEncounters("MAP_ROUTE104").encounters;
+import EncounterTableSection from './EncounterTableSection.astro'
+
+export interface Props {
+  locationId: keyof typeof mapLocations
+}
+
+const { locationId } = Astro.props;
+
+const [id, name] = mapLocations.find(location => location[0] === locationId) ?? 'MAP_NONE';
+const currentMap: { name: string; id: string } = { id, name };
+
+const encounters = processEncounters(currentMap.id).encounters
 ---
 
-<div id="container">
-  <main>
-    <div class="flex justify-center">
-      <table
-        class="table-auto border-collapse rounded-lg shadow-md overflow-hidden mt-4"
-      >
-        <thead>
-          <tr class="bg-amber-800 text-white">
-            <th class="px-4 py-2 text-left">Land Encounters</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            encounters
-              .filter((encounter) => encounter.method === "land_mons")
-              .map((encounter) => {
-                const speciesName = getSpeciesName(
-                  getSpeciesIdFromLabel(encounter.species)
-                );
-                const levelRange = `Lv. ${encounter.min_level} – ${encounter.max_level}`;
-                return (
-                  <tr class="flex-1 even:bg-gray-200 border-b bg-white last:border-0 flex flex-col">
-                    <td class="pl-1 flex gap-2 items-center">
-                      <PokemonSprite
-                        speciesId={getSpeciesIdFromLabel(encounter.species)}
-                      />
-                      <span class="text-sm font-medium">{speciesName}</span>
-                    </td>
-                    <td class="px-2 pb-2 flex italic">
-                      <span class="rounded-full text-xs w-12 flex items-center justify-center text-neutral-900">
-                        {levelRange}
-                      </span>
-                      <span class="rounded-full text-xs  w-12 flex items-center justify-center text-green-600">
-                        {encounter.encounterRate
-                          ? `${encounter.encounterRate}%`
-                          : "—"}
-                      </span>
-                    </td>
-                  </tr>
-                );
-              })
-          }
-        </tbody>
-      </table>
-    </div>
-  </main>
+<div class="flex flex-col gap-1 justify-center self-center w-full px-8 even:break-after-page even:mt-2 odd:mt-[10mm]">
+	<div class="bg-zinc-200 border-gray-800 border-2 rounded-md">
+		<header class="flex flex-col items-center">
+			<span class="font-pixeloperator8 text-center w-full bg-gray-800 py-2 text-white">
+				{currentMap.name}
+			</span>
+		</header>
+		<div class="flex gap-2 justify-center w-full bg-zinc-200 px-5 py-2">
+			<EncounterTableSection
+				encounters={encounters}
+				method="land_mons"
+				title="Land"
+				headerClass="bg-amber-800 text-white"
+			/>
+			<EncounterTableSection
+				encounters={encounters}
+				method="water_mons"
+				title="Surf"
+				headerClass="bg-sky-800 text-white"
+			/>
+			<EncounterTableSection
+				encounters={encounters}
+				method="fishing_mons"
+				title="Fishing"
+				headerClass="bg-indigo-800 text-white"
+			/>
+			<EncounterTableSection
+				encounters={encounters}
+				method="rock_smash_mons"
+				title="Rock Smash"
+				headerClass="bg-red-700 text-white"
+			/>
+		</div>
+	</div>
 </div>
