@@ -3,6 +3,7 @@ import mapLocations from '../utils/generateMapLocations'
 import { processEncounters } from '../utils/encounterUtils/encounterProcessor'
 
 import EncounterTableSection from './EncounterTableSection.astro'
+import FishingEncounterTableSection from './FishingEncounterTableSection.astro';
 
 export interface Props {
   locationId: keyof typeof mapLocations
@@ -16,7 +17,7 @@ const currentMap: { name: string; id: string } = { id, name };
 const encounters = processEncounters(currentMap.id).encounters
 ---
 
-<div class="flex flex-col gap-1 justify-center self-center w-full px-8 even:break-after-page even:mt-2 odd:mt-[10mm]">
+<div class="flex flex-col gap-1 justify-center self-center w-full px-8 even:break-after-page even:mt-2">
 	<div class="bg-zinc-200 border-gray-800 border-2 rounded-md">
 		<header class="flex flex-col items-center">
 			<span class="font-pixeloperator8 text-center w-full bg-gray-800 py-2 text-white">
@@ -36,9 +37,8 @@ const encounters = processEncounters(currentMap.id).encounters
 				title="Surf"
 				headerClass="bg-sky-800 text-white"
 			/>
-			<EncounterTableSection
+			<FishingEncounterTableSection
 				encounters={encounters}
-				method="fishing_mons"
 				title="Fishing"
 				headerClass="bg-indigo-800 text-white"
 			/>
