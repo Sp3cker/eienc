@@ -1,0 +1,89 @@
+---
+import statics from '../data/statics.json'
+import { getSpeciesName } from '../utils/speciesData'
+import { getMapName } from '../utils/generateMapLocations'
+
+import { getSpeciesIdFromLabel } from '../utils/encounterUtils/pokemonEncounterProcessor'
+import PokemonSprite from './PokemonSprite.astro'
+
+// Split statics into two columns
+const mid = Math.ceil(statics.length / 2);
+const staticsLeft = statics.slice(0, mid);
+const staticsRight = statics.slice(mid);
+---
+
+<div class="flex flex-col gap-1 print:break-before-page">
+  <span class="h-[10mm] flex justify-center items-center text-center group-even:hidden"></span>
+  <span class="text-center font-pixeloperator text-lg">Static Pokémon Encounters</span>
+  <span class="text-center font-pixeloperator text-xs text-gray-600 mb-2">The following Pokémon are found as static encounters in the world.</span>
+  <div class="flex flex-row gap-2 w-full px-3">
+    <div class="flex-1 mx-1 rounded border border-gray-300 bg-zinc-100 p-1">
+      <table class="w-full table-auto px-1 font-pixeloperator text-xs print:break-before-all">
+        <thead>
+          <tr class="bg-zinc-200">
+            <th class="px-1 py-0.5 text-left">Pokémon</th>
+            <th class="px-1 py-0.5 text-left">Lvl</th>
+            <th class="px-1 py-0.5 text-left">Location</th>
+          </tr>
+        </thead>
+        <tbody class="break-after-auto">
+          {
+            staticsLeft.map((entry) => (
+              <tr class="even:bg-zinc-50 print:break-after-auto">
+                <td class="px-1 py-0.5">
+                  <span class="flex gap-1 items-center">
+                    {entry.species === 'VAR_0x8005' ? (
+                      <img src="unknown.png" class="size-[20px]" alt="Paradox/UB" />
+                      <span class="text-gray-500 italic text-xs">Paradox/UB</span>
+                    ) : (
+                      <>
+                        <PokemonSprite speciesId={getSpeciesIdFromLabel(entry.species)} size={20} />
+                        <span>{getSpeciesName(getSpeciesIdFromLabel(entry.species))}</span>
+                      </>
+                    )}
+                  </span>
+                </td>
+                <td class="px-1 py-0.5">{entry.level}</td>
+                <td class="px-1 py-0.5 text-xs text-gray-700">{getMapName(entry.map)}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="flex-1 mx-1 rounded border border-gray-300 bg-zinc-100 p-1">
+      <table class="w-full table-auto px-1 font-pixeloperator text-xs print:break-before-all">
+        <thead>
+          <tr class="bg-zinc-200">
+            <th class="px-1 py-0.5 text-left">Pokémon</th>
+            <th class="px-1 py-0.5 text-left">Lvl</th>
+            <th class="px-1 py-0.5 text-left">Location</th>
+          </tr>
+        </thead>
+        <tbody class="break-after-auto">
+          {
+            staticsRight.map((entry) => (
+              <tr class="even:bg-zinc-50 print:break-after-auto">
+                <td class="px-1 py-0.5">
+                  <span class="flex gap-1 items-center">
+                    {entry.species === 'VAR_0x8005' ? (
+                      <img src="unknown.png" class="size-[20px]" alt="Paradox/UB" />
+                      <span class="text-gray-500 italic text-xs">Paradox/UB</span>
+                    ) : (
+                      <>
+                        <PokemonSprite speciesId={getSpeciesIdFromLabel(entry.species)} size={20} />
+                        <span>{getSpeciesName(getSpeciesIdFromLabel(entry.species))}</span>
+                      </>
+                    )}
+                  </span>
+                </td>
+                <td class="px-1 py-0.5">{entry.level}</td>
+                <td class="px-1 py-0.5 text-xs text-gray-700">{getMapName(entry.map)}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
