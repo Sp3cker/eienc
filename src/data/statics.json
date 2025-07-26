@@ -1,0 +1,182 @@
+[
+  {
+    "species": "SPECIES_TAPU_FINI",
+    "level": 70,
+    "map": "MAP_ABANDONED_SHIP_HIDDEN_FLOOR_ROOMS",
+    "script": "AbandonedShip_HiddenFloorRooms_EventScript_TapuFini::"
+  },
+  {
+    "species": "SPECIES_REGISTEEL",
+    "level": 70,
+    "map": "MAP_ANCIENT_TOMB",
+    "script": "AncientTomb_EventScript_Registeel::"
+  },
+  {
+    "species": "SPECIES_ELECTRODE",
+    "level": 30,
+    "map": "MAP_AQUA_HIDEOUT_B1F",
+    "script": "AquaHideout_B1F_EventScript_Electrode1::"
+  },
+  {
+    "species": "SPECIES_ELECTRODE",
+    "level": 30,
+    "map": "MAP_AQUA_HIDEOUT_B1F",
+    "script": "AquaHideout_B1F_EventScript_Electrode2::"
+  },
+  {
+    "species": "SPECIES_SUDOWOODO",
+    "level": 40,
+    "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
+    "script": "BattleFrontier_OutsideEast_EventScript_WaterSudowoodo::"
+  },
+  {
+    "species": "SPECIES_REGIROCK",
+    "level": 70,
+    "map": "MAP_DESERT_RUINS",
+    "script": "DesertRuins_EventScript_Regirock::"
+  },
+  {
+    "species": "SPECIES_HEATRAN",
+    "level": 70,
+    "map": "MAP_FIERY_PATH_BACK_ROOM",
+    "script": "FieryPath_BackRoom_EventScript_Heatran::"
+  },
+  {
+    "species": "SPECIES_MESPRIT",
+    "level": 70,
+    "map": "MAP_FLOATING_SLAB",
+    "script": "FloatingSlab_EventScript_Mesprit::"
+  },
+  {
+    "species": "SPECIES_MOLTRES_GALAR",
+    "level": 70,
+    "map": "MAP_GRANITE_CAVE_B2F",
+    "script": "GraniteCave_B2F_EventScript_MoltresGalar::"
+  },
+  {
+    "species": "SPECIES_REGIDRAGO",
+    "level": 70,
+    "map": "MAP_GRASSY_SLAB",
+    "script": "GrassySlab_EventScript_Regidrago::"
+  },
+  {
+    "species": "SPECIES_REGICE",
+    "level": 70,
+    "map": "MAP_ISLAND_CAVE",
+    "script": "IslandCave_EventScript_Regice::"
+  },
+  {
+    "species": "SPECIES_KYOGRE",
+    "level": 70,
+    "map": "MAP_MARINE_CAVE_END",
+    "script": "MarineCave_End_EventScript_Kyogre::"
+  },
+  {
+    "species": "SPECIES_REGIELEKI",
+    "level": 70,
+    "map": "MAP_NEW_MAUVILLE_INSIDE",
+    "script": "NewMauville_Inside_EventScript_Regieleki::"
+  },
+  {
+    "species": "SPECIES_VOLTORB",
+    "level": 25,
+    "map": "MAP_NEW_MAUVILLE_INSIDE",
+    "script": "NewMauville_Inside_EventScript_Voltorb1::"
+  },
+  {
+    "species": "SPECIES_VOLTORB",
+    "level": 25,
+    "map": "MAP_NEW_MAUVILLE_INSIDE",
+    "script": "NewMauville_Inside_EventScript_Voltorb2::"
+  },
+  {
+    "species": "SPECIES_VOLTORB",
+    "level": 25,
+    "map": "MAP_NEW_MAUVILLE_INSIDE",
+    "script": "NewMauville_Inside_EventScript_Voltorb3::"
+  },
+  {
+    "species": "SPECIES_UXIE",
+    "level": 70,
+    "map": "MAP_ROCKY_SLAB",
+    "script": "RockySlab_EventScript_Uxie::"
+  },
+  {
+    "species": "SPECIES_ARTICUNO_GALAR",
+    "level": 70,
+    "map": "MAP_ROUTE114",
+    "script": "Route114_EventScript_ArticunoGalar::"
+  },
+  {
+    "species": "SPECIES_TAPU_BULU",
+    "level": 70,
+    "map": "MAP_ROUTE116",
+    "script": "Route116_EventScript_TapuBulu::"
+  },
+  {
+    "species": "SPECIES_ZAPDOS_GALAR",
+    "level": 70,
+    "map": "MAP_ROUTE119",
+    "script": "Route119_EventScript_ZapdosGalar::"
+  },
+  {
+    "species": "SPECIES_KECLEON",
+    "level": 50,
+    "map": "MAP_ROUTE120",
+    "script": "Route120_EventScript_StevenBattleKecleon::"
+  },
+  {
+    "species": "SPECIES_TAPU_LELE",
+    "level": 70,
+    "map": "MAP_ROUTE124",
+    "script": "Route124_EventScript_TapuLele::"
+  },
+  {
+    "species": "SPECIES_TAPU_KOKO",
+    "level": 70,
+    "map": "MAP_ROUTE126",
+    "script": "Route126_EventScript_TapuKoko::"
+  },
+  {
+    "species": "SPECIES_AZELF",
+    "level": 70,
+    "map": "MAP_SCORCHED_SLAB",
+    "script": "ScorchedSlab_EventScript_Azelf::"
+  },
+  {
+    "species": "SPECIES_KYUREM",
+    "level": 70,
+    "map": "MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM",
+    "script": "ShoalCave_LowTideIceRoom_EventScript_Kyurem::"
+  },
+  {
+    "species": "VAR_0x8005",
+    "level": 50,
+    "map": "MAP_SHOAL_CAVE_LOW_TIDE_LOWER_ROOM",
+    "script": "ShoalCave_LowTideLowerRoom_EventScript_ConfirmAndUseSummon::"
+  },
+  {
+    "species": "SPECIES_RAYQUAZA",
+    "level": 70,
+    "map": "MAP_SKY_PILLAR_TOP",
+    "script": "SkyPillar_Top_EventScript_Rayquaza::"
+  },
+  {
+    "species": "SPECIES_GROUDON",
+    "level": 70,
+    "map": "MAP_TERRA_CAVE_END",
+    "script": "TerraCave_End_EventScript_Groudon::"
+  },
+  {
+    "species": "VAR_0x8005",
+    "level": 50,
+    "map": "MAP_VICTORY_ROAD_1F",
+    "script": "VictoryRoad_1F_EventScript_ConfirmAndUseSummon::"
+  },
+  {
+    "species": "SPECIES_REGIGIGAS",
+    "level": 70,
+    "map": "MAP_VICTORY_ROAD_B1F",
+    "script": "VictoryRoad_B1F_EventScript_Regigigas::"
+  }
+]

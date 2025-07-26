@@ -514,7 +514,7 @@
               {
                 "min_level": 4,
                 "max_level": 6,
-                "species": "SPECIES_HOUNDOUR"
+                "species": "SPECIES_PONYTA_GALAR"
               },
               {
                 "min_level": 4,
@@ -1978,7 +1978,7 @@
               {
                 "min_level": 6,
                 "max_level": 6,
-                "species": "SPECIES_SENTRET"
+                "species": "SPECIES_TAROUNTULA"
               },
               {
                 "min_level": 6,
@@ -2037,7 +2037,7 @@
               {
                 "min_level": 6,
                 "max_level": 8,
-                "species": "SPECIES_BRONZOR"
+                "species": "SPECIES_ARON"
               },
               {
                 "min_level": 6,
@@ -2160,7 +2160,7 @@
               {
                 "min_level": 12,
                 "max_level": 17,
-                "species": "SPECIES_ARON"
+                "species": "SPECIES_BRONZOR"
               },
               {
                 "min_level": 12,
@@ -3501,7 +3501,7 @@
               {
                 "min_level": 6,
                 "max_level": 8,
-                "species": "SPECIES_COTTONEE"
+                "species": "SPECIES_SENTRET"
               },
               {
                 "min_level": 6,
@@ -13069,12 +13069,12 @@
               {
                 "min_level": 27,
                 "max_level": 30,
-                "species": "SPECIES_CASTFORM"
+                "species": "SPECIES_FEEBAS"
               },
               {
                 "min_level": 27,
                 "max_level": 30,
-                "species": "SPECIES_CASTFORM"
+                "species": "SPECIES_FEEBAS"
               },
               {
                 "min_level": 27,
