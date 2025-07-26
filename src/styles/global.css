@@ -124,3 +124,24 @@
   --font-pixeloperatormonohb8: "PixelOperatorMonoHB8", monospace;
   --font-pixeloperatorsc: "PixelOperatorSC", monospace;
 }
+
+@page {
+  size: A4;
+  margin: 5mm 0mm 8mm 0mm;
+  @bottom-center {
+    font-size: .75rem;
+    content: counter(page);
+  }
+}
+
+/* Cover page styling */
+@layer utilities {
+  .cover {
+    page: cover;
+  }
+}
+
+@page cover {
+  margin: 0;
+  @bottom-center { content: none; }
+}
