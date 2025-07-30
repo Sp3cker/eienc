@@ -16,12 +16,12 @@ const currentMap: { name: string; id: string } = { id, name };
 
 const encounters = processEncounters(currentMap.id).encounters
 ---
-
-<div class="flex flex-col gap-1 justify-center self-center w-full px-8 even:break-after-page even:mt-2">
-	<div class="bg-zinc-200 border-gray-800 border-2 rounded-md">
+<div class="group break-inside-avoid-page mb-2">
+<div class="flex peer flex-col gap-1 justify-center break-inside-avoid-page self-center w-full px-8">
+	<div class="bg-zinc-200 border-gray-800 border-2 rounded-md break-inside-avoid">
 		<header class="flex flex-col items-center">
-			<span class="font-pixeloperator8 text-center w-full bg-gray-800 py-2 text-white">
-				{currentMap.name}
+			<span class="font-pixeloperator8 text-center w-full bg-gray-800 py-2 text-white break-after-avoid-page" >
+				<section><h2 id=`id-${currentMap.id}` class=".tocElement">{currentMap.name}</h2></section>
 			</span>
 		</header>
 		<div class="flex gap-2 justify-center w-full bg-zinc-200 px-5 py-2">
@@ -50,4 +50,5 @@ const encounters = processEncounters(currentMap.id).encounters
 			/>
 		</div>
 	</div>
+</div>
 </div>

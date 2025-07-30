@@ -14,7 +14,7 @@ export type Abilities = Ability[];
 export type MoveSource = "all" | "levelup" | "tm" | "egg";
 
 export interface Pokemon {
-  index: number;
+  speciesId: number;
   speciesName: string;
   types: number[];
   stats: number[];
@@ -27,7 +27,7 @@ export interface Pokemon {
   evolutions?: number[][] | null;
   forms?: string[] | null;
   formId?: number;
-  nameKey: string;
+  nameKey?: string;
   eggGroup?: number[];
   items?: number[];
   tutorMoves?: number[];

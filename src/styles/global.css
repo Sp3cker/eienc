@@ -139,9 +139,17 @@
   .cover {
     page: cover;
   }
+
+  .toc {
+    page: toc;
+  }
 }
 
 @page cover {
   margin: 0;
   @bottom-center { content: none; }
+}
+
+@page toc {
+  margin: 10mm 10mm 10mm 10mm;
 }
